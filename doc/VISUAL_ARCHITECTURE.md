@@ -155,22 +155,22 @@ A high-level component tree for the target user interface.
 
 ```mermaid
 graph TD
-    App[Main Layout]
+    App["Main Layout"]
     
-    App --> Sidebar[Sidebar]
-    Sidebar --> Channels[Channels List (Slack)]
-    Sidebar --> Issues[Issues List (Linear)]
-    Sidebar --> DMs[Direct Messages (Agent/Human)]
+    App --> Sidebar["Sidebar"]
+    Sidebar --> Channels["Channels List (Slack)"]
+    Sidebar --> Issues["Issues List (Linear)"]
+    Sidebar --> DMs["Direct Messages (Agent/Human)"]
     
-    App --> MainView[Context View]
+    App --> MainView["Context View"]
     
-    MainView --> SplitView{Split View}
+    MainView --> SplitView{"Split View"}
     
-    SplitView --> ChatPane[Chat/Thread Pane]
-    ChatPane --> MessageList[Real-time Message Stream]
-    ChatPane --> Composer[Unified Composer]
+    SplitView --> ChatPane["Chat/Thread Pane"]
+    ChatPane --> MessageList["Real-time Message Stream"]
+    ChatPane --> Composer["Unified Composer"]
     
-    SplitView --> ContextPane[Context/Task Pane]
-    ContextPane --> TaskProperties[Issue Status, Assignee, Labels]
-    ContextPane --> Artifacts[Generated Code/Docs]
+    SplitView --> ContextPane["Context/Task Pane"]
+    ContextPane --> TaskProperties["Issue Status, Assignee, Labels"]
+    ContextPane --> Artifacts["Generated Code/Docs"]
 ```
