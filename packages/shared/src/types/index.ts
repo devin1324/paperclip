@@ -1,3 +1,4 @@
+export type { Channel, Message } from "./chat.js";
 export type { Company } from "./company.js";
 export type {
   Environment,

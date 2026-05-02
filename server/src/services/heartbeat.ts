@@ -1457,9 +1457,13 @@ function deriveTaskKey(
     readNonEmptyString(contextSnapshot?.taskKey) ??
     readNonEmptyString(contextSnapshot?.taskId) ??
     readNonEmptyString(contextSnapshot?.issueId) ??
+    readNonEmptyString(contextSnapshot?.threadId) ??
+    readNonEmptyString(contextSnapshot?.channelId) ??
     readNonEmptyString(payload?.taskKey) ??
     readNonEmptyString(payload?.taskId) ??
     readNonEmptyString(payload?.issueId) ??
+    readNonEmptyString(payload?.threadId) ??
+    readNonEmptyString(payload?.channelId) ??
     null
   );
 }

@@ -965,3 +965,6 @@ export type {
   EnvironmentProviderCapability,
   EnvironmentSupportStatus,
 } from "./environment-support.js";
+
+export * from "./types/chat.js";
+export * from "./validators/chat.js";

@@ -63,6 +63,17 @@ export function assertCompanyAccess(req: Request, companyId: string) {
   }
 }
 
+export function assertCompanyRole(req: Request, companyId: string, allowedRoles: string[]) {
+  assertCompanyAccess(req, companyId);
+  if (req.actor.type === "agent") return; // Or block agent, up to policy. Let's allow for now or assume they are OK if they have access.
+  if (req.actor.type === "board" && !req.actor.isInstanceAdmin && Array.isArray(req.actor.memberships)) {
+    const membership = req.actor.memberships.find((item) => item.companyId === companyId);
+    if (!membership || !membership.membershipRole || !allowedRoles.includes(membership.membershipRole)) {
+      throw forbidden(`User role must be one of: ${allowedRoles.join(", ")}`);
+    }
+  }
+}
+
 export function getActorInfo(req: Request) {
   assertAuthenticated(req);
   if (req.actor.type === "agent") {

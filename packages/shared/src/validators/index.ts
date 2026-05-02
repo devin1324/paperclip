@@ -1,3 +1,5 @@
+export { createChannelSchema, createMessageSchema } from "./chat.js";
+
 export {
   instanceGeneralSettingsSchema,
   patchInstanceGeneralSettingsSchema,

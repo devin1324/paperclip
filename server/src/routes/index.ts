@@ -1,3 +1,4 @@
+export { channelRoutes } from "./channels.js";
 export { healthRoutes } from "./health.js";
 export { companyRoutes } from "./companies.js";
 export { companySkillRoutes } from "./company-skills.js";
